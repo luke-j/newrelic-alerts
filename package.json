@@ -1,0 +1,38 @@
+{
+  "name": "newrelic-alerts",
+  "version": "1.0.3-alpha",
+  "description": "Create alerts in newrelic",
+  "main": "bin/index.js",
+  "author": {
+    "name": "Luke Jones",
+    "email": "luke@lukejones.co",
+    "url": "lukejones.co"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/luke-j/newrelic-alerts",
+  "bin": {
+    "newrelic-alerts": "bin/index.js"
+  },
+  "scripts": {
+    "precommit": "npm run lint && npm run beautify",
+    "lint": "eslint src",
+    "beautify": "pretty-quick --staged",
+    "build":
+      "rollup src/index.js --banner '#!/usr/bin/env node' --output.format cjs --output.file bin/index.js && chmod +x bin/index.js"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.3.2",
+    "find-config": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "husky": "^0.14.3",
+    "prettier": "^1.12.0",
+    "pretty-quick": "^1.4.1",
+    "rollup": "^0.57.1"
+  }
+}

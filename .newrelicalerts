@@ -1,0 +1,19 @@
+{
+  "policies": [
+    {
+      "name": "Gone viral!",
+      "notification": {
+        "url": "https://hooks.slack.com/services/...",
+        "type": "slack",
+        "channel": "#my-channel"
+      },
+      "condition": {
+        "description": "Greater than 800 page views for at least 2 minutes",
+        "threshold": 800,
+        "operator": "above",
+        "duration": 2,
+        "query": "SELECT count(*) FROM PageView"
+      }
+    }
+  ]
+}
